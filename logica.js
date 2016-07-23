@@ -31,3 +31,8 @@ t = 1 == 1 || 2 == 3
 console.log("1 == 1 || 2 == 3",t)
 t = 1 == 2 || 2 == 2
 console.log("1 == 2 || 2 == 2",t)
+
+//negacao
+console.log("1 == 2 || 2 == 2 negado",!t)
+t = 1 == 2 || !(2 == 2)
+console.log("1 == 2 || !(2 == 2)",t)
