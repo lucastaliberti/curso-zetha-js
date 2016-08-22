@@ -18,17 +18,25 @@ const arquivo = fs.readFileSync('MOCK_DATA.txt', 'utf8');
           ,sobrenome: pessoa[2]
           ,email: pessoa[3]
           ,sexo: pessoa[4]
-          ,ip: pessoa[5]
+          ,age: parseInt(pessoa[5])
+          ,ip: pessoa[6]
         }
       })
       .filter(i => i.sexo === 'Female')
       .reduce((prev,value,index) => {
         let count = prev.count + 1
+        let age = prev.age + value.age
+        let avg = Math.round(age/count)
+
         return {
-          count: count
+           count: count
+          ,age: age
+          ,avg: avg
         }
       },
       {
-        count: 0
+         count: 0
+        ,age: 0
+        ,avg: 0
       })
   )
